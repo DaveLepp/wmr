@@ -6,7 +6,7 @@
   <link href='http://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css' />
   <link href='http://fonts.googleapis.com/css?family=Gruppo' rel='stylesheet' type='text/css' />
   <link href='http://fonts.googleapis.com/css?family=Cantarell' rel='stylesheet' type='text/css' />
-  <link href="{{MEDIA_URL}}main.css" type="text/css" media="all" rel="stylesheet/less" />
+  <!-- <link href="{{MEDIA_URL}}main.css" type="text/css" media="all" rel="stylesheet/less" /> -->
   <!--[if lt IE 9]>
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"> </script>
   <![endif]-->
@@ -31,19 +31,19 @@
   <div class="account-info">
     {% if user.is_authenticated %}
       <strong>{{ user.username }}</strong>
-      <a href="{% url django.contrib.auth.views.logout %}">log out</a>
+      <a href="{% url 'logout' %}">log out</a>
       
       {% if user.is_staff %}
       |
-      <a href="{% url admin:index %}">administration</a>
+      <a href="{% url 'admin:index' %}">administration</a>
       {% endif %}
       
     {% else %}
-      <a href="{% url django.contrib.auth.views.login %}">log in</a>
+      <a href="{% url 'login' %}">log in</a>
       
       {% if registration_enabled %}
       |
-      <a href="{% url registration.views.create_account %}">register</a>
+      <a href="{% url 'create_account' %}">register</a>
       {% endif %}
     {% endif %}
   </div>
@@ -51,11 +51,11 @@
 
 <nav>
   <ul>
-    <li><a href="{% url wmr.views.job_new %}">New Job</a></li>
-    <li><a href="{% url wmr.views.job_list %}">Job History</a></li>
-    <li><a href="{% url wmr.views.configs %}">Saved Configurations</a></li>
-    <li><a href="{% url wmr.views.dataset_list %}">Datasets</a></li>
-    <li><a href="{% url django.contrib.auth.views.password_change %}">Change password</a></li>
+    <li><a href="{% url 'job_new' %}">New Job</a></li>
+    <li><a href="{% url 'job_list' %}">Job History</a></li>
+    <li><a href="{% url 'configs' %}">Saved Configurations</a></li>
+    <li><a href="{% url 'dataset_list' %}">Datasets</a></li>
+    <!-- <li><a href="{% url 'password_change' %}">Change password</a></li> -->
   </ul>
 </nav>
 

@@ -10,7 +10,7 @@ WMR_PORT = 50100
 ## Set this if WebMapReduce is deployed at a sub-url of your website. This will
 ## guarantee that media files are served properly and will fix some redirects.
 ##
-FORCE_SCRIPT_NAME = '/wmr'
+FORCE_SCRIPT_NAME = ''
 
 
 ##

@@ -1,4 +1,5 @@
-// Poker Data 1 Mapper
+// The poker hand dataset contains a listing of 1,000,000 random 5 card poker hands
+// Instead of outputting a count, output the percent of hands in the data set of each ranking 
 
 public class Mapper {
     public void map(String key, String value) {
